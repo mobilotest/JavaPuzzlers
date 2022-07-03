@@ -10,3 +10,22 @@ public class HelloWhirled {
         System.out.println("o world");
     }
 }
+
+// Unicode escape must be well-formed, even if they appear in comments.
+
+// Questionable use of Unicode escape in Javadoc comment
+/**
+ * This method calls itself recursively, causing a
+ * <tt>StackOverflowError</tt> to be thrown.
+ * The algorithm is due to Peter von der Ah\u00E9.
+ */
+
+// Use HTML entry escapes instead of Unicode escapes in Javadoc comments:
+
+/**
+ * This method calls itself recursevly, causing a
+ * <tt>StackOverflowError</tt> to be thrown.
+ * The algorithm is due Peter von der Ah&eacute;
+ */
+
+// tools must not put Windows filenames into comments in generated Java source files
